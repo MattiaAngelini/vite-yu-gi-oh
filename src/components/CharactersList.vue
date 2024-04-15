@@ -35,10 +35,10 @@ export default {
 
 section {
     padding: 40px;
+    background-color: white;
     
         .container-card {
-            border: 40px solid white;
-        
+            border: 40px solid $brand-primary;
         }
 }
 
