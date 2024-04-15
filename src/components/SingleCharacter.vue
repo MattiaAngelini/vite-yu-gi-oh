@@ -1,15 +1,19 @@
 <script>
 export default {
-    name: 'SingleCharacter'
+    name: 'SingleCharacter',
+
+    props:  {
+        characterDetails: Object
+    }
 }
 </script>
 
 <template>
     <div class="card">           
-        <img src="https://images.ygoprodeck.com/images/cards_small/34541863.jpg" alt="">
+        <img :src="characterDetails.card_images[0].image_url">
         <div class="info-card d-flex flex-column align-items-center">
-            <div>CARTA</div> 
-            <div>TIPO</div> 
+            <div> {{ characterDetails.name }} </div> 
+            <div> {{ characterDetails.type }} </div> 
         </div>
           
     </div>

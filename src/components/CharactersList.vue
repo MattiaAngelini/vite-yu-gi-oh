@@ -24,7 +24,7 @@ export default {
         <div class=" container-card 
         d-flex flex-wrap justify-content-betweeen">
         
-            <SingleCharacter></SingleCharacter>
+            <SingleCharacter v-for="character in store.characters.data" key="characters.data.id" :characterDetails="character"></SingleCharacter>
            
            
         </div> 
