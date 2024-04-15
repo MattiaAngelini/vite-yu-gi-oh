@@ -18,19 +18,15 @@ export default {
 
 <template>
 
-    <section >   
-        
-        
-        <div class=" container-card 
-        d-flex flex-wrap justify-content-betweeen">
-        
-            <SingleCharacter v-for="character in store.characters.data" key="characters.data.id" :characterDetails="character"></SingleCharacter>
-           
-           
+    <section>    
+        <div class=" container-card d-flex flex-wrap justify-content-betweeen">
+      
+            <SingleCharacter v-for="character in store.characters.data" key="characters.data.id" 
+            :characterDetails="character"></SingleCharacter>
+              
         </div> 
     </section>
 
-   
 </template>
 
 <style scoped lang="scss">
@@ -40,15 +36,10 @@ export default {
 section {
     padding: 40px;
     
-    .container-card {
-        border: 40px solid white;
-       
-    }
-
-    // .black-bar {
-    //     height: 40px;
-    //     background-color: black;
-    // }
+        .container-card {
+            border: 40px solid white;
+        
+        }
 }
 
 </style>
