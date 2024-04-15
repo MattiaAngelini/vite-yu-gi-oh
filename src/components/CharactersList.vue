@@ -1,10 +1,17 @@
 <script>
 import SingleCharacter from './SingleCharacter.vue';
+import { store } from '../store.js';
 
 export default {
     name: 'CharactersList',
     components: {
         SingleCharacter
+    },
+
+    data(){
+        return {
+            store
+        }
     }
 }
 </script>
@@ -18,19 +25,8 @@ export default {
         d-flex flex-wrap justify-content-betweeen">
         
             <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
-            <SingleCharacter></SingleCharacter>
+           
+           
         </div> 
     </section>
 

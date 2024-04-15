@@ -5,7 +5,14 @@ export default {
 </script>
 
 <template>
-    <div class="card">singola carta</div>
+    <div class="card">           
+        <img src="https://images.ygoprodeck.com/images/cards_small/34541863.jpg" alt="">
+        <div class="info-card d-flex flex-column align-items-center">
+            <div>CARTA</div> 
+            <div>TIPO</div> 
+        </div>
+          
+    </div>
 </template>
 
 <style scoped lang="scss">
