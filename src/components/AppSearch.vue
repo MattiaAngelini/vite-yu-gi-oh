@@ -8,8 +8,6 @@ export default {
     data() {
     return {
         store,
-
-        avalaibleArchetype: []
     };
     },
 }
@@ -20,11 +18,10 @@ export default {
 <template>
    
     <div>    
-        <select v-model="store.archetypeSelected" name="" id="">
+        <select name="" id="">
 
-            <option v-for="archetype in avalaibleArchetype" >type</option>
+            <option v-for="archetype in store.archetype">{{ archetype.archetype_name }} </option>
             
-
         </select>
     
     </div>
@@ -33,6 +30,8 @@ export default {
 
 <style scoped lang="scss">
 @use '../style/generic';
+
+
 
 
 
