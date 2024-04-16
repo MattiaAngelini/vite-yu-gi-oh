@@ -2,6 +2,7 @@
 import AppHeader from './components/AppHeader.vue';
 import CharactersList from './components/CharactersList.vue';
 import AppLoader from './components/AppLoader.vue'
+import AppSearch from './components/AppSearch.vue'
 import axios from 'axios'
 import { store } from './store.js'
 
@@ -9,7 +10,8 @@ export default {
   components:{
   AppHeader,
   CharactersList,
-  AppLoader
+  AppLoader,
+  AppSearch
 },
 
  data() {
@@ -31,11 +33,22 @@ export default {
       
     } );
     
+  },
+
+  getArchetypeFromApi() {
+    axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+    .then((response) =>{
+   
+      store.archetype = response.data;
+          
+    } );
   }
+
  },
 
  mounted() {
   this.getCharacterFromApi();
+  this.getArchetypeFromApi();
  }
 }
 
@@ -46,6 +59,7 @@ export default {
   <AppHeader></AppHeader>
 
   <main>
+        <AppSearch class="p-3"></AppSearch>
         <CharactersList v-if="store.isLoading === false">  </CharactersList>
         <AppLoader v-else></AppLoader>
   </main>

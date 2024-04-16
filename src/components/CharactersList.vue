@@ -34,7 +34,7 @@ export default {
 @use '../partials/variables' as *;
 
 section {
-    padding: 40px;
+   
     background-color: white;
     
         .container-card {
