@@ -23,9 +23,11 @@ export default {
  methods: {
   //CHIAMATA API
   getCharacterFromApi() {
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+    let apiUrl =  'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0';
+
+    axios.get(apiUrl)
     .then((response) =>{
-      
+
       // dopo chiamata api popolo array nello store.js per avere oggetti a disposizione.
       store.characters = response.data
       // ottenuto i dati, la var isLoading diventa false. (per comparsa/scomparsa elemento con img loading)
@@ -35,12 +37,26 @@ export default {
     
   },
 
+
   getArchetypeFromApi() {
-    axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+
+    let apiUrl = 'https://db.ygoprodeck.com/api/v7/archetypes.php';
+
+    const queryParams = {};
+
+    if(store.archetypeSelected !== '')
+      queryParams = store.archetypeSelected;
+
+    axios.get(apiUrl, {
+      params: queryParams
+    })
+
+
     .then((response) =>{
-   
+      
       store.archetype = response.data;
-          
+     
+      
     } );
   }
 

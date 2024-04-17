@@ -8,6 +8,7 @@ export default {
     data() {
     return {
         store,
+        
     };
     },
 }
@@ -18,12 +19,11 @@ export default {
 <template>
    
     <div>    
-        <select name="" id="">
+        <select v-model="store.archetypeSelected" name="" id="">
 
             <option v-for="archetype in store.archetype">{{ archetype.archetype_name }} </option>
-            
-        </select>
-    
+        
+        </select>  
     </div>
     
 </template>
