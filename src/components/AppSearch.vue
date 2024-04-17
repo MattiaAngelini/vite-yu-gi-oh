@@ -19,9 +19,9 @@ export default {
 <template>
    
     <div>    
-        <select v-model="store.archetypeSelected" name="" id="">
+        <select @change="$emit('searchCards')" v-model="store.archetypeSelected" name="" id="">
 
-            <option v-for="archetype in store.archetype">{{ archetype.archetype_name }} </option>
+            <option  v-for="archetype in store.archetype" :value="archetype.archetype_name" >{{ archetype.archetype_name }} </option>
         
         </select>  
     </div>
